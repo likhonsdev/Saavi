@@ -1,10 +1,16 @@
 # Saavi
 Saavi is your customizable, async AI dev agent built for security, control, and direct GitHub automation—perfect for teams looking for a powerful   with broader LLM and self-hosting flexibility.
 
-<p align="center">
-  <img src="https://res.cloudinary.com/dktp1ybbx/image/upload/c_limit,h_170,w_170/f_auto,fl_lossy,q_auto/v1631659747/organization/prod/1200978/6Us7cThUNd.png" alt="Saavi Logo" width="100" />
-</p>
+🖥️ Saavi in Action
+> Describe your task
+"Fix the broken image rendering on /about page."
 
+> Saavi thinks...
+✓ Repo scanned
+✓ Problem located
+✓ Fix implemented
+✓ PR opened: https://github.com/your-org/your-repo/pull/123
+> 
 <h1 align="center">Saavi</h1>
 <p align="center"><strong>Async AI that fixes bugs, builds features — smart, not rigid.</strong></p>
 
@@ -54,6 +60,34 @@ Saavi isn’t just a dev tool—it’s your **mission partner**:
 | Test Generation        | "Write unit tests for `UserService.ts`"              |
 | GitHub Automation      | "Open PR with commit titled 'Improve error handling'" |
 
+📡 Deployment Options
+	•	✅ SaaS Agent – Use hosted Saavi endpoint
+	•	🧱 Self-hosted – Node.js / Docker setup
+	•	🛡️ Enterprise Mode – Secure, air-gapped GitHub App integration
+
+⸻
+
+🤖 License
+
+Saavi is licensed under the GPL-3.0 License.
+You are free to use, modify, and share—just keep it open.
+
+⸻
+
+🧭 Bonus Lore: Unlock The Vault
+
+Saavi was trained on real missions. Learn Python, intercept encrypted messages, analyze crime scene footage, and prove you’re ready for top-secret assignments.
+Because sometimes, the code isn’t just code—it’s a cipher.
+
+“Some stones are better left unturned. But you’re not just anyone, are you?”
+
+⸻
+
+🙋‍♀️ Community & Support
+	•	GitHub Issues → Report bugs or request features
+	•	Discussions → Join the dev conversation
+	•	Twitter/X → @SaaviAgent
+
 ---
 
 ### 🔧 Getting Started
@@ -71,3 +105,8 @@ echo "GITHUB_TOKEN=your_token_here" > .env
 
 # Run Saavi
 npm run dev   # or start CLI agent mode
+
+<p align="center">
+✨ Made for developers who think faster than they type.  
+</p>
+```
