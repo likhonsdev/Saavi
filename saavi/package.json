@@ -1,0 +1,33 @@
+{
+  "name": "saavi",
+  "version": "1.0.0",
+  "description": "Your autonomous AI dev agent that fixes bugs, builds features, and ships PRs while you sleep",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only scripts/dev-runner.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "ai",
+    "developer",
+    "agent",
+    "autonomous"
+  ],
+  "author": "likhonsdev",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "openai": "^4.52.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "ts-node-dev": "^2.0.0"
+  }
+}
