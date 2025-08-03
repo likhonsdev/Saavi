@@ -12,7 +12,11 @@
 
 -----
 
+ an async development agent
+
 ## 🎯 What is Saavi?
+
+tackles bugs, small feature requests, and other software engineering tasks, with direct export to GitHub.
 
 Saavi is your **async AI development companion** that understands your codebase and autonomously handles the tedious stuff:
 
