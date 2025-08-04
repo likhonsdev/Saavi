@@ -1,27 +1,34 @@
+// llm/saavi.ts
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { config } from '../saavi.config';
-import OpenAI from 'openai';
 
-export class SaaviLLM {
-  private llm: OpenAI;
+// Ensure the API key is available
+if (!config.llm.apiKey) {
+  throw new Error("Missing GEMINI_API_KEY in your environment variables.");
+}
 
-  constructor(private llmConfig: any) {
-    if (llmConfig.provider === 'openai') {
-      this.llm = new OpenAI({ apiKey: llmConfig.apiKey });
-    } else {
-      throw new Error(`Unsupported LLM provider: ${llmConfig.provider}`);
-    }
+const genAI = new GoogleGenerativeAI(config.llm.apiKey);
+
+class SaaviLLM {
+  private model;
+
+  constructor(modelName: string = config.llm.model) {
+    this.model = genAI.getGenerativeModel({ model: modelName });
   }
 
-  async generate(prompt: string): Promise<string | null> {
-    if (this.llm instanceof OpenAI) {
-      const response = await this.llm.chat.completions.create({
-        model: this.llmConfig.model,
-        messages: [{ role: 'user', content: prompt }],
-        temperature: this.llmConfig.temperature,
-        max_tokens: this.llmConfig.maxTokens,
-      });
-      return response.choices[0].message.content;
+  /**
+   * Generates a response from the LLM based on a given prompt.
+   */
+  async generate(prompt: string): Promise<string> {
+    try {
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      return response.text();
+    } catch (error) {
+      console.error("Error generating LLM response:", error);
+      throw error;
     }
-    return null;
   }
 }
+
+export const llm = new SaaviLLM();
