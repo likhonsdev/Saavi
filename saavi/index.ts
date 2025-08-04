@@ -1,12 +1,19 @@
-import { config } from './saavi.config';
-import { Executor } from './agent/executor';
+// index.ts
+import { executor } from './agent/executor';
 
 async function main() {
-  console.log('Saavi is starting...');
-  const executor = new Executor(config);
-  // This is a placeholder for where the agent would be started with a task.
-  // For example:
-  // await executor.start("Fix the login button styling");
+  const userRequest = process.argv.slice(2).join(' ');
+
+  if (!userRequest) {
+    console.error("Please provide a task. Example: \nnode dist/index.js \"Add a loading spinner to the login button\"");
+    process.exit(1);
+  }
+
+  console.log(`SAAVI initialized. Task: "${userRequest}"`);
+  await executor.run(userRequest);
 }
 
-main();
+main().catch(error => {
+  console.error("An unexpected error occurred:", error);
+  process.exit(1);
+});

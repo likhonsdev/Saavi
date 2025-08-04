@@ -9,10 +9,10 @@ export const config = {
     repo: process.env.GITHUB_REPO,
   },
   llm: {
-    provider: process.env.LLM_PROVIDER || 'openai',
-    apiKey: process.env.OPENAI_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.GEMINI_API_KEY,
-    model: process.env.SAAVI_MODEL || 'gpt-4-turbo',
+    provider: process.env.LLM_PROVIDER || 'google',
+    apiKey: process.env.GEMINI_API_KEY,
+    model: process.env.SAAVI_MODEL || 'gemini-2.5-pro', // As requested by user
     temperature: parseFloat(process.env.SAAVI_TEMPERATURE || '0.1'),
-    maxTokens: parseInt(process.env.SAAVI_MAX_TOKENS || '4000'),
+    maxTokens: parseInt(process.env.SAAVI_MAX_TOKENS || '8000'),
   },
 };
